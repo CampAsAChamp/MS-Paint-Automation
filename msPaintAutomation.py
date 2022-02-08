@@ -3,7 +3,7 @@ import time
 import cv2 as cv
 from PIL import Image
 
-print( cv.__version__)
+print(cv.__version__)
 image_file = 'C:\\Users\\1151244\\Pictures\\rtn_logo.jpg'
 # Basic usage:
 # 1. Find the variable called image_file (line above) and replace it with a valid path to an image
@@ -88,29 +88,36 @@ pixel_dictionary = dict()
 for x in range(image.width):
     for y in range(image.height):
         rgb = image.getpixel((x, y))  # get the pixel value in a tuple
-        rgb_rounded = list(map(lambda num: round(num, -1), rgb))  # round it because doing every color takes forever
-        rgb_rounded = fix_list(rgb_rounded)  # ensure rounding didn't push anything over 255 (it will)
-        rgb_list = list(map(str, rgb_rounded))  # convert it to a list of strings
+        # round it because doing every color takes forever
+        rgb_rounded = list(map(lambda num: round(num, -1), rgb))
+        # ensure rounding didn't push anything over 255 (it will)
+        rgb_rounded = fix_list(rgb_rounded)
+        # convert it to a list of strings
+        rgb_list = list(map(str, rgb_rounded))
         rgb_key = ':'.join(rgb_list)  # separate with : to split later
 
         # if the dictionary doesn't have any pixel list yet, create it.
         if pixel_dictionary.get(rgb_key) is None:
             pixel_dictionary[rgb_key] = list()
-        pixel_dictionary[rgb_key].append((x, y))  # compile a list of pixels using this RGB
+        # compile a list of pixels using this RGB
+        pixel_dictionary[rgb_key].append((x, y))
 
 # from pprint import pprint
 # pprint(pixel_dictionary)
 
-pyautogui.click(start_x, start_y)  # clicking before doing all the work to ensure we're focused in the paint
+# clicking before doing all the work to ensure we're focused in the paint
+pyautogui.click(start_x, start_y)
 
 # sorted the RGBs by the lengths of the associated list. this way we can see the image form earlier on
 for rgb in sorted(pixel_dictionary.keys(), key=lambda z: len(pixel_dictionary[z]), reverse=True):
-    pyautogui.PAUSE = original_speed + 0.1  # when the color form comes up do it slowly or else there are problems.
+    # when the color form comes up do it slowly or else there are problems.
+    pyautogui.PAUSE = original_speed + 0.1
     # set color to current RGB key
     color_map = map(int, rgb.split(':'))
     color_list = list(color_map)
     # print('changing to', rgb, color_list)
-    time.sleep(0.1)  # this sleep is to allow the gui to catch up...i think. this eliminates some but not all problems
+    # this sleep is to allow the gui to catch up...i think. this eliminates some but not all problems
+    time.sleep(0.1)
     color(color_list)
     pyautogui.PAUSE = original_speed  # return to quickly painting
     for pixel_x, pixel_y in pixel_dictionary.get(rgb):
