@@ -1,18 +1,21 @@
 import pyautogui
 import time
-import cv2 as cv
 from PIL import Image
+from pathlib import Path
 
-print(cv.__version__)
-image_file = 'C:\\Users\\1151244\\Pictures\\rtn_logo.jpg'
-# Basic usage:
-# 1. Find the variable called image_file (line above) and replace it with a valid path to an image
-# 2. Start MS Paint in the background
-# 3. Start this from the command line and within 5 seconds:
-# 4. Put your mouse pointer in the top left corner of the canvas (the giant white part) in Paint
-# 5. Wait forever
+""" 
+Basic usage:
+1. Find the variable called image_file (line below) and replace it with a valid path to an image
+2. Start MS Paint in the background
+3. Start this from the command line and within 5 seconds:
+4. Put your mouse pointer in the top left corner of the canvas (the giant white part) in Paint
+5. Wait forever
 
-# If you want it to stop press CTRL + ALT + DEL and put your mouse in the top left corner of the screen. It should stop.
+If you want it to stop press CTRL + ALT + DEL and put your mouse in the top left corner of the screen. It should stop. 
+"""
+
+image_folder = Path("C:/Users/CampAsAChamp/Github/msPaintAutomation/images")
+image_file = image_folder / "sample_image.png"
 
 
 pyautogui.PAUSE = 0  # adjust this like crazy
