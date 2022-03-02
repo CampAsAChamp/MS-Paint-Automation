@@ -103,8 +103,6 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
 1. Change Image Path in code to your image
    ```python
    18    image_file = 'C:\\Users\\Nick\\Pictures\\logo.jpg' # Change the path to the path to your image
