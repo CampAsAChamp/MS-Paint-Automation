@@ -78,23 +78,21 @@
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/CampAsAChamp/msPaintAutomation.git
-   ```
+    ```sh
+    git clone https://github.com/CampAsAChamp/msPaintAutomation.git
+    ```
 2. Create virtual environment
-   ```sh
+    ```sh
     python -m venv .venv 
-   ```
+    ```
 3. Activate virtual environment
-   ```sh
+    ```sh
     source ./venv/Scripts/Activate
-   ```
+    ```
 4. Download dependencies
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-
+    ```sh
+    pip install -r requirements.txt
+    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
