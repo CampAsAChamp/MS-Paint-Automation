@@ -10,6 +10,8 @@
 <h3 align="center">Microsoft Paint Automation</h3>
 
   <p align="center">
+    Automatically draw an image in Microsoft Paint
+    
     Pick an image and this program will recreate that image using Microsoft Paint.
     <br />
     <br />
