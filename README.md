@@ -11,7 +11,7 @@
 
   <p align="center">
     Automatically draw an image in Microsoft Paint
-    
+    <br />
     Pick an image and this program will recreate that image using Microsoft Paint.
     <br />
     <br />
